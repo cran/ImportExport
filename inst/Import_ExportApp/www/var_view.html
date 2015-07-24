@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Summarize variable information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for var_view"><tr><td>var_view</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Summarize variable information
+
+</h2>
+
+<h3>Description</h3>
+
+<p> Creates a table with the name, the description, the value labels and the format for each variable in the data frame. It is similar to the variable view shown in the SPSS.
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+var_view(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p> The data frame whose variables we want to summarize.
+
+</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p> A data frame containing the specified summary.
+
+
+
+
+
+</p>
+
+
+<h3>Note</h3>
+
+<p> This function was built in order to summarize imported SPSS labelled data sets using <code>spss_import</code>, but it can also work with other labelled data sets. 
+
+</p>
+
+
+<h3>See Also</h3>
+
+ <p><code>spss_import</code>
+
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+a&lt;- 1:10
+b&lt;-rep("b",times=10)
+c&lt;-rep(1:2,each=5)
+x&lt;-data.frame(a,b,c)
+attr(x$a,"label")&lt;- "descr1"
+attr(x$b,"label")&lt;- NULL
+attr(x$c,"label")&lt;- "descr3"
+attr(x$c,"value.labels")&lt;-list("1"="Yes","2"="No")
+var_view(x)
+</pre>
+
+
+</body></html>
