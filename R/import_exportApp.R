@@ -1,3 +1,3 @@
 import_exportApp <- function(...){
-  shiny::runApp(appDir=gsub("/library/base","/library/ImportExport/Import_ExportApp",system.file()),...)
+  shiny::runApp(appDir=system.file("Import_ExportApp",package="ImportExport"))
 }

@@ -7,5 +7,3 @@ library(foreign,quietly=T)
 
 source("data/format_detector.r")
 source("data/date_to_char.r")
-
-# file.runsyntax<-"C:/programs/bin/pspp.exe"

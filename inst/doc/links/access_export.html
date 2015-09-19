@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Export multiple R data sets to Microsoft Office Access</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for access_export"><tr><td>access_export</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Export multiple R data sets to Microsoft Office Access
+
+</h2>
+
+<h3>Description</h3>
+
+<p>Directly connect (and disconnect at the end) with the Microssoft Office Access database using the <span class="pkg">RODBC</span> package and write one or multiple data sets.
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+access_export(file,x,tablename=as.character(1:length(x)),...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>The path to the file with .mdb extension.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Either a data frame or a list containing multiple data frame to be exported.</p>
+</td></tr>
+<tr valign="top"><td><code>tablename</code></td>
+<td>
+<p>A character or a vector character containing the names that will receive the tables where the data frame is stored. If it is a vector, it must follow the same order as the data frames in <code>x</code> have. All names must be different from each others. </p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>see <code>odbcConnectAccess</code>,<code>sqlSave</code>. </p>
+</td></tr>
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>Date variables are exported as an integer, they might be converted to character if a character representation in the access database is wanted.
+
+</p>
+
+
+<h3>Value</h3>
+
+<p> No value is returned.
+
+
+
+
+
+</p>
+
+
+<h3>Note</h3>
+
+<p> This function connects and writes on an existing Microsoft Office Access database, but it can't create a new one.
+
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+##  Not run:
+# x is a data.frame
+file&lt;-("mydata.xlsx")
+a&lt;- 1:10
+b&lt;-rep("b",times=10)
+c&lt;-rep(1:2,each=5)
+x&lt;-data.frame(a,b,c)
+excel_export(x,file,table_names="mydata")
+# x is a list
+y&lt;-list(x,x[2:3])
+excel_export(y,file,table_names=c("mydata1","mydata2"))
+## End(Not run)
+</pre>
+
+
+</body></html>

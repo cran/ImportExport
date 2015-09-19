@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Import data set from SPSS (.sav)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spss_import"><tr><td>spss_import</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Import data set from SPSS (.sav)
+
+</h2>
+
+<h3>Description</h3>
+
+<p>Read a labelled data set from SPSS, finding automatically the date variables and keeping the variable and value labels information, by using the information obtained with <code>spss_varlist()</code> and the function <code>spss.get</code> from the <span class="pkg">Hmisc</span> Package.
+
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+spss_import(file, allow="_",out.format="d-m-yy",use.value.labels=F,...)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+  
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p> The path to the file with .sav extension.</p>
+</td></tr>
+<tr valign="top"><td><code>allow</code></td>
+<td>
+<p> A vector which contains the characters that must be allowed in the variable names.</p>
+</td></tr>
+<tr valign="top"><td><code>out.format</code></td>
+<td>
+<p> A character specifying the format for printing the date variables.</p>
+</td></tr>
+<tr valign="top"><td><code>use.value.labels</code></td>
+<td>
+<p>If TRUE, replace the labelled variables with their value labels.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>See  <code>spss.get</code>.</p>
+</td></tr>
+</table>
+
+
+
+<h3>Details</h3>
+
+<p> In order to provide the màximum functionallity, if the main code generates an error, the function tries to read the file with the <code>read_sav</code> function from the <span class="pkg">haven</span> package, but a warning message appears.
+The <code>var_view</code> function can be used to summarize the contents of the data frame labels.
+
+</p>
+
+
+<h3>Value</h3>
+
+<p> A data frame or a list containing the data stored in the <b>SPSS</b> file.
+
+
+
+
+
+</p>
+
+
+<h3>Note</h3>
+
+<p> If the warning message appears and the file has been read using <code>read_sav</code> the resulting data frame will be diferent from the expected one (see the <span class="pkg">haven</span> package to learn more about <code>read_sav</code>).
+
+</p>
+
+
+<h3>See Also</h3>
+
+ <p><code>var_view</code>, <code>spss.get</code>, <code>read_sav</code>
+</p>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+##  Not run:
+x &lt;- spss_import('mydata.sav')
+
+## End(Not run)
+</pre>
+
+
+</body></html>

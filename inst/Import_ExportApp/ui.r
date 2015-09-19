@@ -205,7 +205,7 @@ shinyUI(fluidPage(
                                                choices = list("Display mean and SD" =0, "Display median and quartiles" = 1), 
                                                selected = 0,inline=T),
                        verbatimTextOutput("summary"),verbatimTextOutput("datesummary")),
-              tabPanel("App guide",includeHTML("www/App-guide.htm"))    
+              tabPanel("App guide",includeHTML("www/App-guide.html"))    
               
       )
       ) 
