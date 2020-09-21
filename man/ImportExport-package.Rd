@@ -10,6 +10,7 @@ The package also includes an usefull shiny app called by \code{\link{ImportExpor
 a rather easy way.
 
 }
+
 \details{
 
 The DESCRIPTION file:

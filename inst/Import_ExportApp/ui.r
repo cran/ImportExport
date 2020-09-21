@@ -48,7 +48,7 @@ shinyUI(fluidPage(
                                          textInput("sheetName_excel_import","sheet name",value=NULL),
                                          helpText("---------------------------------------------------------------------------------------------------------------"),
                                          helpText("The use of the following command will disable selected options, including the file select."),
-                                         textInput("arguments_excel","introduce manually the arguments inside read.xlsx()"))),
+                                         textInput("arguments_excel","introduce manually the arguments inside read_excel()"))),
 
      
                  conditionalPanel(condition= "output.format=='MICROSOFT_OFFICE_ACCES_.mdb'",

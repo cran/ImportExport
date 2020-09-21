@@ -4,19 +4,19 @@
 \title{ Export multiple R data sets to Excel
 
 }
-\description{ Exports a single data frame or a list of data frames to one or multiple excel sheets using the function \code{\link[xlsx]{write.xlsx}} frome the \pkg{xlsx} package. This function just add an option to  \code{\link[xlsx]{write.xlsx}} so it can write multiple data frames with a single command .It can write both .xls and .xlsx files.
+
+\description{ Exports a single data frame or a list of data frames to one or multiple excel sheets using the function \code{\link[writexl]{write_xlsx}} frome the \pkg{writexl} package. This function can write multiple data frames (passed as a list) with a single command .It can write both .xls and .xlsx files.
 
 }
 \usage{
-excel_export(x,file,table_names=as.character(1:length(x)),row.names=F,...)
+excel_export(x,file,table_names=as.character(1:length(x)),...)
 }
 
 \arguments{
   \item{x}{Either a data frame or a list containing multiple data frame to be exported.}
   \item{file}{The name of the file we want to create.}
   \item{table_names}{A character or a vector character containing the names that will receive the sheet where the data frame is stored. If it is a vector, it must follow the same order as the data frames in \code{x} have. All names must be different from each others. }
-  \item{row.names}{see \code{\link[xlsx]{write.xlsx}}.}
-  \item{...}{see \code{\link[xlsx]{write.xlsx}}.}
+  \item{...}{see \code{\link[writexl]{write_xlsx}}.}
 
 }
 
@@ -24,13 +24,10 @@ excel_export(x,file,table_names=as.character(1:length(x)),row.names=F,...)
 
 }
 
-\note{ This function requires Java, read the corresponding section of the \code{\link[xlsx]{write.xlsx}} help to see the details.
-
-}
 
 
 
-\seealso{ \code{\link{read.xlsx}}, \code{\link[xlsx]{write.xlsx}}
+\seealso{ \code{\link{read_excel}}, \code{\link[readxl]{read_excel}}
 
 }
 \examples{

@@ -6,20 +6,18 @@
 <table width="100%" summary="page for excel_export"><tr><td>excel_export</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2> Export multiple R data sets to Excel
-
 </h2>
 
 <h3>Description</h3>
 
-<p> Exports a single data frame or a list of data frames to one or multiple excel sheets using the function <code>write.xlsx</code> frome the <span class="pkg">xlsx</span> package. This function just add an option to  <code>write.xlsx</code> so it can write multiple data frames with a single command .It can write both .xls and .xlsx files.
-
+<p> Exports a single data frame or a list of data frames to one or multiple excel sheets using the function <code>write_xlsx</code> frome the <span class="pkg">writexl</span> package. This function can write multiple data frames (passed as a list) with a single command .It can write both .xls and .xlsx files.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-excel_export(x,file,table_names=as.character(1:length(x)),row.names=F,...)
+excel_export(x,file,table_names=as.character(1:length(x)),...)
 </pre>
 
 
@@ -38,47 +36,30 @@ excel_export(x,file,table_names=as.character(1:length(x)),row.names=F,...)
 <td>
 <p>A character or a vector character containing the names that will receive the sheet where the data frame is stored. If it is a vector, it must follow the same order as the data frames in <code>x</code> have. All names must be different from each others. </p>
 </td></tr>
-<tr valign="top"><td><code>row.names</code></td>
-<td>
-<p>see <code>write.xlsx</code>.</p>
-</td></tr>
 <tr valign="top"><td><code>...</code></td>
 <td>
-<p>see <code>write.xlsx</code>.</p>
+<p>see <code>write_xlsx</code>.</p>
 </td></tr>
 </table>
-
 
 
 <h3>Value</h3>
 
 <p> No value is returned.
-
-
-
-
-
-</p>
-
-
-<h3>Note</h3>
-
-<p> This function requires Java, read the corresponding section of the <code>write.xlsx</code> help to see the details.
-
 </p>
 
 
 <h3>See Also</h3>
 
- <p><code>excel_import</code>, <code>write.xlsx</code>
-
+ <p><code>read_excel</code>, <code>read_excel</code>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-##  Not run:
+
+## Not run: 
 # x is a data.frame
 file&lt;-("mydata.xlsx")
 a&lt;- 1:10
@@ -89,6 +70,7 @@ excel_export(x,file,table_names="mydata")
 # x is a list
 y&lt;-list(x,x[2:3])
 excel_export(y,file,table_names=c("mydata1","mydata2"))
+
 ## End(Not run)
 </pre>
 

@@ -42,9 +42,14 @@ else if(format()=="TXT" | format()=="CSV"){
 
   
 else if(format()=="XLS" | format()=="XLSX"){
-  if(input$arguments_excel == ""){read.xlsx(input$file$datapath,sheetIndex=input$sheetIndex_excel_import,sheetName=if(input$sheetName_excel_import != ""){input$sheetName_excel_import},header=input$button_excel_import )}
-  else {eval(parse(text=paste("read.xlsx(",input$arguments_excel,")",sep="")))}
-  } 
+  if(input$arguments_excel == ""){
+    read_excel(path=input$file$datapath,
+               sheet=if(input$sheetName_excel_import != "") input$sheetName_excel_import else input$sheetIndex_excel_import,
+               col_names=input$button_excel_import)
+  } else {
+    eval(parse(text=paste("read_excel(",input$arguments_excel,")",sep="")))
+  }
+} 
   
  
 

@@ -1,7 +1,7 @@
 access_import <-
 function(file,table_names,ntab=length(table_names),SQL_query=rep(F,times=ntab),where_sql=c(),out.format="d-m-yy",uid="",pwd="",...)
 {
-  mycon<-RODBC::odbcConnectAccess(file,uid=uid,pwd=pwd,...)
+  mycon<-RODBC::odbcConnect(file,uid=uid,pwd=pwd,...)
   for(i in 1:length(where_sql)){SQL_query[where_sql[i]]<-T}
   if(ntab==1){
     if(!SQL_query){x<-sqlFetch(mycon,table_names,...);close(mycon)
