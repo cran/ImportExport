@@ -27,9 +27,12 @@ excel_export(x,file,table_names=as.character(1:length(x)),...)
 
 
 
-\seealso{ \code{\link{read_excel}}, \code{\link[readxl]{read_excel}}
+\seealso{
+
+\code{\link[readxl]{read_excel}}
 
 }
+
 \examples{
 
 \dontrun{

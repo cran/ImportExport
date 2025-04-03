@@ -2,7 +2,8 @@ spss_export <-
 function(table,file.dict=NULL,file.save=NULL,var.keep="ALL",file.runsyntax="C:/Archivos de programa/SPSS/runsyntx.exe",file.data=NULL,run.spss=TRUE,dec="."){
 
 
-  if (class(table)!="data.frame") table<-as.data.frame(table)  
+  #if (class(table)!="data.frame") table<-as.data.frame(table)
+  if (!is.data.frame(table)) table<-as.data.frame(table)  
 
   names<-names(table) 
   names<-gsub(" ","_",names)
